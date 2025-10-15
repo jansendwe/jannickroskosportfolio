@@ -126,11 +126,19 @@ expandableSections.forEach(section => {
   iframe.title = "Dokumentarfilm";
   extraContent.appendChild(iframe);
 
-  iframe.addEventListener("click", e => {
-    e.stopPropagation();
-  });
-}
+  // Sonst wie bisher → normales Video
+  else {
+    const video = document.createElement("video");
+    video.src = media;
+    video.controls = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.style.maxWidth = "90%";
+    extraContent.appendChild(video);
 
+    video.addEventListener("click", e => e.stopPropagation());
+  }
+}
 
       // ❗Verhindert, dass der Klick auf das Video die Section wieder schließt
       video.addEventListener("click", e => {
