@@ -73,8 +73,7 @@ const sectionMedia = {
     "wpf3.jpg",
     "wpf4.jpg"
   ],
-  "Dokumentarfilm": "Dokumentarfilm.mp4",
-
+ 
   "3D Visualisierung": [
     "3d1.png",
     "3d2.png",
