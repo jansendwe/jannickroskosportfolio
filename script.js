@@ -73,8 +73,7 @@ const sectionMedia = {
     "wpf3.jpg",
     "wpf4.jpg"
   ],
- "Dokumentarfilm": "vimeo",
-
+  "Dokumentarfilm": "Dokumentarfilm.mp4",
 
   "3D Visualisierung": [
     "3d1.png",
@@ -116,29 +115,13 @@ expandableSections.forEach(section => {
 
     // Wenn es ein String ist → Video
     else if (typeof media === "string") {
-  const iframe = document.createElement("iframe");
-  iframe.src = "https://player.vimeo.com/video/1127220271?badge=0&autopause=0&player_id=0&app_id=58479";
-  iframe.width = "800";
-  iframe.height = "450";
-  iframe.frameBorder = "0";
-  iframe.allow = "autoplay; fullscreen; picture-in-picture";
-  iframe.style.maxWidth = "90%";
-  iframe.title = "Dokumentarfilm";
-  extraContent.appendChild(iframe);
-
-  // Sonst wie bisher → normales Video
-  else {
-    const video = document.createElement("video");
-    video.src = media;
-    video.controls = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.style.maxWidth = "90%";
-    extraContent.appendChild(video);
-
-    video.addEventListener("click", e => e.stopPropagation());
-  }
-}
+      const video = document.createElement("video");
+      video.src = media;
+      video.controls = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.style.maxWidth = "90%";
+      extraContent.appendChild(video);
 
       // ❗Verhindert, dass der Klick auf das Video die Section wieder schließt
       video.addEventListener("click", e => {
