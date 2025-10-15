@@ -103,10 +103,4 @@ footer {
   background: #222;
   color: white;
 }
-section .extra-content {
-  display: none; /* alles erstmal verstecken */
-}
-
-section.expanded .extra-content {
-  display: block; /* nur sichtbar, wenn Section expanded ist */
-}
+ 
