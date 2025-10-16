@@ -33,17 +33,18 @@ body {
   text-decoration: none;
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
-  color: #333;
-  padding: 10px 20px;
-  border: 2px solid #333;
-  border-radius: 5px;
+  color: #2575fc;
+  padding: 6px 20px;
+  border: 2px solid #2575fc;
+  border-radius: 25px;
   transition: all 0.3s ease;
 }
 
 .nav-button a:hover {
-  background-color: #333;
+  background-color: #2575fc;
   color: white;
 }
+
 
 
 
@@ -338,4 +339,48 @@ main section.expanded .extra-content {
   .extra-content video {
     width: 95%;
   }
+}
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  height: 100vh; /* optional, falls du die Seite komplett füllen willst */
+}
+
+.slider-preview {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  display: flex;               /* Flexbox */
+  flex-direction: column;      /* Inhalte untereinander */
+  justify-content: center;     /* vertikal zentrieren */
+  align-items: center;         /* horizontal zentrieren */
+  height: 300px;               /* Höhe des Slider-Balkens */
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 20px;
+}
+
+#slider-title {
+  font-size: 7rem;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  transition: transform 0.3s ease, text-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
