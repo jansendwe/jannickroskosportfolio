@@ -1,64 +1,38 @@
-// ===============================
-// 🎞️ Slider Logik
-// ===============================
 const projects = [
-  {
-    image: "Projekt 1.png",
-    title: "WPF Animation/Games",
-    description: "Meine Animationsserie mit dem Titel Super spannende Abenteuer mit Bruno und Fiete."
-  },
-  {
-    image: "Projekt 3.png",
-    title: "Dokumentarfilm",
-    description: "Mein Dokumentarfilm über das Thema Lichtverschmutzung."
-  },
-  {
-    image: "Projekt 2.png",
-    title: "3D Visualisierung",
-    description: "3D Visualisierung im Stil des Surrealismus."
-  },
-  {
-    image: "Projekt 4.png",
-    title: "Print",
-    description: "Mein Magazin, in welchem das Thema Vergänglichkeit angesprochen wird."
-  }
+  { fach: "WPF Animation" },
+  { fach: "Dokumentarfilm" },
+  { fach: "3D Visualisierung" },
+  { fach: "Print" }
 ];
 
 let currentIndex = 0;
 
-const img = document.getElementById("slider-image");
 const title = document.getElementById("slider-title");
-const description = document.getElementById("slider-description");
-const nextButton = document.getElementById("next-button");
-const prevButton = document.getElementById("prev-button");
+const slider = document.getElementById("slider-preview");
 
 function updateSlider() {
-  if (!img || !title || !description) return;
+  // Fade-Out
+  title.style.opacity = 0;
 
-  img.style.opacity = 0;
   setTimeout(() => {
-    img.src = projects[currentIndex].image;
-    img.alt = projects[currentIndex].title;
-    title.textContent = projects[currentIndex].title;
-    description.textContent = projects[currentIndex].description;
-    img.style.opacity = 1;
-  }, 300);
-}
+    // Text ändern
+    title.textContent = projects[currentIndex].fach;
 
-if (nextButton) {
-  nextButton.addEventListener("click", () => {
+    // Fade-In
+    title.style.opacity = 1;
+
+    // Nächster Slide
     currentIndex = (currentIndex + 1) % projects.length;
-    updateSlider();
-  });
-}
-if (prevButton) {
-  prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-    updateSlider();
-  });
+  }, 200);
 }
 
+// Klick auf den Slider wechselt zum nächsten Projekt
+slider.addEventListener("click", updateSlider);
+
+// Initial
 updateSlider();
+
+
 
 
 // ===============================
