@@ -26,6 +26,8 @@ body {
 /* "About me"-Button ganz rechts */
 .nav-button {
   position: absolute;
+
+  
   right: 30px;
 }
 
@@ -339,3 +341,37 @@ main section.expanded .extra-content {
     width: 95%;
   }
 }
+
+.slider-preview {
+  background: #2575fc;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#slider-image {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.caption h2 {
+  margin: 10px 0 5px;
+}
+
+.caption p {
+  margin: 0 0 20px;
+}
+
+#next-button {
+  background-color: white;
+  color: #2575fc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
