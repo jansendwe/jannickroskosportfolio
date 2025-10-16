@@ -3,22 +3,22 @@
 // ===============================
 const projects = [
   {
-    image: "Projekt 1.png",
+    image: "Images/Projekt 1.png",
     title: "WPF Animation/Games",
     description: "Meine Animationsserie mit dem Titel Super spannende Abenteuer mit Bruno und Fiete."
   },
   {
-    image: "Projekt 3.png",
+    image: "Images/Projekt 3.png",
     title: "Dokumentarfilm",
     description: "Mein Dokumentarfilm über das Thema Lichtverschmutzung."
   },
   {
-    image: "Projekt 2.png",
+    image: "Images/Projekt 2.png",
     title: "3D Visualisierung",
     description: "3D Visualisierung im Stil des Surrealismus."
   },
   {
-    image: "Projekt 4.png",
+    image: "Images/Projekt 4.png",
     title: "Print",
     description: "Mein Magazin, in welchem das Thema Vergänglichkeit angesprochen wird."
   }
