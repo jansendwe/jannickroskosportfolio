@@ -1,9 +1,17 @@
 /* Global */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: 'Outfit', sans-serif;
-  margin: 0;
   background: #f5f5f5;
   color: #222;
+
+  /* Damit der Footer unten bleibt */
+  display: flex;
+  flex-direction: column;
 }
 
 /* 🔝 NAVBAR */
@@ -50,6 +58,7 @@ body {
 
 /* 📜 CONTENT */
 main {
+  flex: 1; /* <-- sorgt dafür, dass main den Platz ausfüllt */
   padding: 60px 20px;
 }
 
@@ -93,8 +102,6 @@ main {
   text-decoration: none;
   display: inline-block;
 }
-
-
 
 /* 📎 FOOTER */
 footer {
