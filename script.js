@@ -1,4 +1,4 @@
-// Slider-Projekt-Titel
+// 🔄 Slider-Projekt-Titel
 const projects = [
   { fach: "WPF Animation" },
   { fach: "Dokumentarfilm" },
@@ -17,13 +17,15 @@ function updateSlider() {
     title.textContent = projects[currentIndex].fach;
     title.style.opacity = 1;
     currentIndex = (currentIndex + 1) % projects.length;
-  }, 200);
+  }, 250);
 }
 
+// Klick + Touch
 slider.addEventListener("click", updateSlider);
+slider.addEventListener("touchstart", updateSlider);
 updateSlider();
 
-// Aufklappbare Sections
+// 🧩 Aufklappbare Sections
 document.querySelectorAll("main section").forEach(section => {
   const extraContent = section.querySelector(".extra-content");
   if (!extraContent) return;
