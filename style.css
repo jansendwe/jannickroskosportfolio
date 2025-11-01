@@ -1,4 +1,3 @@
-/* Global */
 body {
   font-family: 'Outfit', sans-serif;
   margin: 0;
@@ -6,38 +5,37 @@ body {
   color: #222;
 }
 
+/* 🔝 NAVIGATION */
 .navbar {
   display: flex;
-  justify-content: center;       /* zentriert horizontal */
-  align-items: center;           /* zentriert vertikal */
-  height: 100px;
-  background-color: #f9f9f9;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: #fff;
   position: relative;
-  padding: 0 30px;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Logo zentriert (in der Mitte der Flexbox) */
 .nav-logo img {
-  height: 60px;
+  height: 50px;
   width: auto;
-  display: block; /* verhindert kleinen Versatz */
 }
 
-/* "About me"-Button ganz rechts */
 .nav-button {
   position: absolute;
-  right: 30px;
+  right: 20px;
 }
 
 .nav-button a {
   text-decoration: none;
-  font-family: 'Outfit', sans-serif;
   font-weight: 600;
   color: #2575fc;
-  padding: 6px 20px;
+  padding: 6px 16px;
   border: 2px solid #2575fc;
   border-radius: 25px;
   transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .nav-button a:hover {
@@ -45,246 +43,47 @@ body {
   color: white;
 }
 
-
-
-
-/* Linker und rechter Platzhalter (flexible Breite) */
-.nav-side {
-  flex: 1;
-}
-
-/* Logo mittig */
-.nav-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.nav-logo img {
-  height: 60px; /* Größe des Logos */
-  width: auto;
-}
-
-/* Rechter Bereich mit Links */
-.nav-links ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.nav-links li {
-  margin-left: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  color: #333;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #0077cc;
-}
-
-
-.nav-logo img {
-  height: 60px; /* Logo-Größe anpassen */
-  width: auto;
-}
-
-
-.nav-logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
-
-.nav-links a:hover {
-  color: #2575fc;
-}
-
-
-
+/* 🎬 SLIDER */
 .slider-preview {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
-  padding: 60px 20px;
-  margin-bottom: 150px; /* ⬅️ Abstand zu den Sektionen darunter */
-}
-
-.slider-box {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
-  max-width: 1000px;
-  margin: auto;
-  flex-wrap: wrap;
-}
-
-#slider-image {
-  width: 400px;
   height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: opacity 0.4s ease-in-out;
-}
-
-.caption {
-  max-width: 500px;
-}
-
-.caption h2 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-.caption p {
-  margin: 10px 0 20px;
-}
-
-#next-button {
-  background-color: white;
-  color: #2575fc;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
+  text-align: center;
   cursor: pointer;
+  user-select: none;
+  padding: 0 20px;
 }
 
-#next-button:hover {
-  background: #eee;
+#slider-title {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 900;
+  margin: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* 📂 PROJEKTSEKTIONEN */
+/* 📂 SECTIONS */
 main section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   max-width: 800px;
-  margin: auto;
+  margin: 0 auto 30px;
   background: white;
-  margin-bottom: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.5s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 main h2 {
   margin-top: 0;
+  font-size: 1.5rem;
 }
 
-/* 📎 FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #222;
-  color: white;
-}
-
-
-
-
-/* =============================== */
-/* 🎬 Sections auf- und zuklappbar */
-/* =============================== */
-
-main section {
-  overflow: hidden;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-main section.expanded {
-  max-height: 1200px; /* Höhe im geöffneten Zustand */
-  transition: all 0.6s ease;
-}
-
-.extra-content {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-main section.expanded .extra-content {
-  opacity: 1;
-  max-height: 800px; /* Platz für Bilder/Videos */
-}
-
-.extra-content img,
-.extra-content video {
-  width: 45%;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.extra-content img:hover,
-.extra-content video:hover {
-  transform: scale(1.03);
-}
-
-
-.extra-content img {
-  width: calc(50% - 10px);
-}
-
-.extra-content video {
-  width: 90%;
-  max-width: 700px;
-  border-radius: 12px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* =============================== */
-/* 🎬 Aufklappbare Sections – cleaner Look */
-/* =============================== */
-
-main section {
-  overflow: hidden;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-main section.expanded {
-  max-height: 1000px;
-  transition: all 0.6s ease;
-}
-
-/* Inhalt, der beim Ausklappen erscheint */
+/* EXTRA CONTENT */
 .extra-content {
   opacity: 0;
   max-height: 0;
@@ -300,12 +99,12 @@ main section.expanded {
 
 main section.expanded .extra-content {
   opacity: 1;
-  max-height: 600px;
+  max-height: 1000px;
 }
 
 /* 🖼️ Bilder */
 .extra-content img {
-  width: 38%;               /* kleiner und mehr Weißraum */
+  width: 45%;
   max-width: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -318,73 +117,36 @@ main section.expanded .extra-content {
 }
 
 /* 🎥 Videos */
-.extra-content video {
-  width: 70%;
-  max-width: 600px;
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+  max-width: 700px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
 }
 
-.extra-content video:hover {
-  transform: scale(1.02);
-}
-
-/* 🧘 Responsiv – auf kleineren Bildschirmen */
-@media (max-width: 700px) {
-  .extra-content img {
-    width: 80%;
-    max-width: none;
-  }
-  .extra-content video {
-    width: 95%;
-  }
-}
-
-
-
-
-#Weitere\ Arbeiten.expanded .extra-content {
-  opacity: 1;
-  max-height: 1200px; /* noch etwas mehr Platz beim Ausklappen */
-}
-
-
-
-
-
-body {
-  margin: 0;
-  font-family: 'Outfit', sans-serif;
-  height: 100vh; /* optional, falls du die Seite komplett füllen willst */
-}
-
-.slider-preview {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  display: flex;               /* Flexbox */
-  flex-direction: column;      /* Inhalte untereinander */
-  justify-content: center;     /* vertikal zentrieren */
-  align-items: center;         /* horizontal zentrieren */
-  height: 300px;               /* Höhe des Slider-Balkens */
+/* 📎 FOOTER */
+footer {
   text-align: center;
-  cursor: pointer;
-  user-select: none;
-  padding: 0 20px;
+  padding: 30px;
+  background: #222;
+  color: white;
+  font-size: 0.9rem;
 }
 
-#slider-title {
-  font-size: 7rem;
-  font-weight: 900;
-  margin: 0 0 20px 0;
-  transition: transform 0.3s ease, text-shadow 0.3s ease, opacity 0.3s ease;
+/* 📱 MOBILE */
+@media (max-width: 700px) {
+  .navbar { height: 70px; }
+  .nav-logo img { height: 40px; }
+  .nav-button a { font-size: 0.8rem; padding: 5px 14px; }
+  main section { padding: 30px 15px; }
+  .extra-content img { width: 90%; max-width: none; }
+  #slider-title { font-size: 2.5rem; }
 }
-
-
-
-
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-} 
